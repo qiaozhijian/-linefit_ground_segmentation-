@@ -1,0 +1,11 @@
+*.pcd
+*.pyc
+/experiment/
+/.idea/
+*.udb
+/.kdev4/
+*.kdev4
+/data/
+/cmake-build-debug/
+/build/
+/cmake_modules/

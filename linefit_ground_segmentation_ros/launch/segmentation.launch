@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <!-- Ground segmentation -->
+    <!--<node pkg="rviz" type="rviz" name="rviz" args="-d $(find linefit_ground_segmentation_ros)/launch/test.rviz" />-->
+    <node name="ground_segmentation" pkg="linefit_ground_segmentation_ros" type="ground_segmentation_node" output="screen" args="00">
+    <rosparam command="load" file="$(find linefit_ground_segmentation_ros)/launch/segmentation_params.yaml"/>
+    <param name="input_topic" value="/kitti/velo/pointcloud" />
+    <param name="ground_output_topic" value="ground_cloud" />
+    <param name="obstacle_output_topic" value="obstacle_cloud" />
+  </node>
+
+</launch>
