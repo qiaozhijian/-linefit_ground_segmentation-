@@ -25,7 +25,7 @@ public:
         ss << setfill('0') << setw(2) << seq;
         string strPathToSequence = "/media/qzj/Document/grow/research/slamDataSet/kitti/data_odometry_velodyne/dataset/sequences/" + ss.str() + "/velodyne/";
 //         string strPathToSave = "/media/qzj/Document/grow/research/slamDataSet/kitti/data_odometry_velodyne/dataset/downSample/bin/" + ss.str() + "/velodyne/";
-        string strPathToSave = "/media/qzj/Document/grow/research/slamDataSet/kitti/data_odometry_velodyne/dataset/downSample/bin2/" + ss.str() + "/velodyne/";
+        string strPathToSave = "/media/qzj/Document/grow/research/slamDataSet/kitti/data_odometry_velodyne/dataset/downSample/bin/" + ss.str() + "/velodyne/";
         cout<<"strPathToSequence: "<<strPathToSequence.c_str()<<endl;
         cout<<"strPathToSave: "<<strPathToSave.c_str()<<endl;
         cout<<"bin to save: "<<nTimes<<endl;
@@ -60,7 +60,7 @@ public:
 			pcl::PointCloud<PointType>::Ptr ground_cloud_xyzi(new pcl::PointCloud<PointType> ()), obstacle_cloud_xyzi(new pcl::PointCloud<PointType> ());
 			pcl::copyPointCloud(ground_cloud, *ground_cloud_xyzi);
 			pcl::copyPointCloud(obstacle_cloud, *obstacle_cloud_xyzi);
-			writeKittiPclBinData(ground_cloud_xyzi,binfileToSave);
+			writeKittiPclBinData(obstacle_cloud_xyzi,binfileToSave);
 			ground_pub_.publish(ground_cloud);
 			obstacle_pub_.publish(obstacle_cloud);
         }
