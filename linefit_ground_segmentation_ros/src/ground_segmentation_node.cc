@@ -124,11 +124,9 @@ int main(int argc, char** argv) {
 
     // Start node.
     SegmentationNode node(nh, ground_topic, obstacle_topic, params, latch);
-    ros::Subscriber cloud_sub;
 	for (int i=0;i<11;i++)
 	{
 		std::string seq = std::to_string(i);
 		node.scanCallback(seq);
 	}
-    //ros::spin();
 }
